@@ -29,11 +29,13 @@ const weaponPassivesCatalog = [
   {
     character: "Gustave",
     name: "Lanceram",
-    passives: [
-      { level: 4, effect: "Rank can't be lower than C." },
-      { level: 10, effect: "Base Attack gives 4 Perfection." },
-      { level: 20, effect: "Parrying gives 2 Perfection instead of 1." },
-    ],
+    // Game8's per-level passive table for this weapon ("Rank can't be lower
+    // than C." / "Base Attack gives 4 Perfection." / "Parrying gives 2
+    // Perfection instead of 1.") is explicitly noted as ONLY appearing once
+    // Verso is unlocked as a playable character. Confirmed in-game by the
+    // user (Gustave-only, no Verso yet) that Lanceram currently shows no
+    // passive abilities — so this is empty until Verso is unlocked.
+    passives: [],
   },
   {
     character: "Maelle",
