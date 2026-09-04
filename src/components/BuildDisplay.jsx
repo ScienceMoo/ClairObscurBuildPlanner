@@ -153,9 +153,7 @@ export default function BuildDisplay({
                           className="edit-luminas-button"
                           onClick={() => onEditPictos(colIndex)}
                         >
-                          {Array.isArray(col.pictos) && col.pictos.length > 0
-                            ? "Edit Pictos"
-                            : "Add Pictos"}
+                          Select Pictos
                         </button>
                       )}
                       {rowLabel === "Luminas" && (
@@ -163,9 +161,7 @@ export default function BuildDisplay({
                           className="edit-luminas-button"
                           onClick={() => onEditLuminas(colIndex)}
                         >
-                          {Array.isArray(col.luminas) && col.luminas.length > 0
-                            ? "Edit Luminas"
-                            : "Add Luminas"}
+                          Select Luminas
                         </button>
                       )}
                       {rowLabel === "Skills" && (
@@ -173,9 +169,7 @@ export default function BuildDisplay({
                           className="edit-luminas-button"
                           onClick={() => onEditSkills(colIndex)}
                         >
-                          {Array.isArray(col.skills) && col.skills.length > 0
-                            ? "Edit Skills"
-                            : "Add Skills"}
+                          Select Skills
                         </button>
                       )}
                     </>
