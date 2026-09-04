@@ -38,6 +38,20 @@ const weaponPassivesCatalog = [
     passives: [],
   },
   {
+    // Same weapon/passives as Gustave's Lanceram entry above, but for Verso
+    // (not yet a column in sampleItems.js — added ahead of time for when the
+    // user unlocks him). Per Game8, these passives only actually appear once
+    // Verso exists as a playable character, which is presumably why they
+    // show up under his name rather than Gustave's.
+    character: "Verso",
+    name: "Lanceram",
+    passives: [
+      { level: 4, effect: "Rank can't be lower than C." },
+      { level: 10, effect: "Base Attack gives 4 Perfection." },
+      { level: 20, effect: "Parrying gives 2 Perfection instead of 1." },
+    ],
+  },
+  {
     character: "Maelle",
     name: "Medalum",
     passives: [
