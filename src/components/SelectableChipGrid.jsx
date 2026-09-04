@@ -1,5 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 
+function buildTooltip(item) {
+  const extras = [];
+  if (item.luminaCost != null) extras.push(`Cost: ${item.luminaCost}`);
+  if (item.ap != null) extras.push(`AP: ${item.ap}`);
+  if (item.spCost != null) extras.push(`SP: ${item.spCost}`);
+  if (!item.description) return extras.length ? `(${extras.join(", ")})` : "";
+  return extras.length
+    ? `${item.description} (${extras.join(", ")})`
+    : item.description;
+}
+
 // Shared search + keyboard-navigable grid used by the Pictos/Luminas/Skills
 // editor modals. Type to filter, ArrowDown/ArrowUp to move the highlight,
 // Enter to toggle the highlighted entry. Click still works directly.
@@ -72,7 +83,7 @@ export default function SelectableChipGrid({
                 }${showImages || statsFields.length ? " with-image" : ""}`}
                 onClick={() => onToggle(item.name)}
                 onMouseEnter={() => setHighlightedIndex(idx)}
-                title={item.description}
+                title={buildTooltip(item)}
               >
                 {showImages && item.image && (
                   <img src={item.image} alt="" className="lumina-chip-image" />

@@ -4,6 +4,10 @@ import SelectableChipGrid from "./SelectableChipGrid";
 
 export default function LuminaEditorModal({ column, onToggle, onClose }) {
   const equippedNames = Array.isArray(column.luminas) ? column.luminas : [];
+  const totalPoints = equippedNames.reduce((sum, name) => {
+    const entry = luminasCatalog.find((l) => l.name === name);
+    return sum + (entry?.luminaCost || 0);
+  }, 0);
 
   return (
     <div className="lumina-modal-overlay" onClick={onClose}>
@@ -14,9 +18,12 @@ export default function LuminaEditorModal({ column, onToggle, onClose }) {
             Close
           </button>
         </div>
+        <div className="lumina-points-total">
+          Total Lumina Points: <span>{totalPoints}</span>
+        </div>
         <p className="lumina-modal-hint">
           Type to search, press ↓ then Enter to toggle, or click a Lumina
-          directly.
+          directly. Hover a Lumina to see its effect and point cost.
         </p>
         <SelectableChipGrid
           items={luminasCatalog}

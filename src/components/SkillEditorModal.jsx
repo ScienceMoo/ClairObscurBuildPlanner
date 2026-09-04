@@ -19,7 +19,7 @@ export default function SkillEditorModal({ column, onToggle, onClose }) {
         </div>
         <p className="lumina-modal-hint">
           Type to search, press ↓ then Enter to toggle, or click a Skill
-          directly.
+          directly. Hover a Skill to see its effect, AP, and SP cost.
         </p>
         <SelectableChipGrid
           items={characterSkills}

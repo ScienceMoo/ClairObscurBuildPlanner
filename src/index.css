@@ -335,6 +335,16 @@ body {
   font-size: 0.85rem;
   margin: 0 0 16px;
 }
+.lumina-points-total {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #e6eef8;
+  margin: 4px 0 12px;
+}
+.lumina-points-total span {
+  color: #f6821f;
+  font-weight: 700;
+}
 .lumina-modal-empty {
   color: #9ca3af;
 }

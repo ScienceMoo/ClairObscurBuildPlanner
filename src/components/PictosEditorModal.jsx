@@ -16,7 +16,7 @@ export default function PictosEditorModal({ column, onToggle, onClose }) {
         </div>
         <p className="lumina-modal-hint">
           Type to search, press ↓ then Enter to toggle, or click a Pictos
-          directly.
+          directly. Hover a Pictos to see its effect and point cost.
         </p>
         <SelectableChipGrid
           items={luminasCatalog}
