@@ -69,11 +69,6 @@ body {
     border-right: none;
     padding-right: 0;
   }
-  .row-label {
-    width: 90px;
-    padding-left: 6px;
-    font-size: 0.85rem;
-  }
 }
 .build-display {
   overflow: auto;
@@ -449,4 +444,11 @@ body {
   font-weight: 700;
   width: 180px;
   padding-left: 12px;
+}
+@media (max-width: 640px) {
+  .row-label {
+    width: 90px;
+    padding-left: 6px;
+    font-size: 0.85rem;
+  }
 }
