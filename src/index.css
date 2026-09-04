@@ -11,7 +11,7 @@ body {
     Arial;
   margin: 0;
   padding: 16px;
-  background: #0f1724;
+  background: #161616;
   color: #e6eef8;
 }
 .app header {
@@ -72,8 +72,6 @@ body {
 }
 .build-display {
   overflow: auto;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 .build-table {
   width: 100%;
@@ -345,6 +343,9 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 10px;
 }
+.lumina-grid:has(.with-image) {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
 .lumina-chip {
   padding: 10px 12px;
   background: #1f2937;
@@ -371,32 +372,36 @@ body {
 .lumina-chip.with-image {
   display: flex;
   align-items: flex-start;
-  gap: 8px;
+  gap: 12px;
+  padding: 14px 16px;
 }
 .lumina-chip-image {
-  width: 28px;
-  height: 28px;
+  width: 44px;
+  height: 44px;
   object-fit: contain;
   flex-shrink: 0;
 }
 .lumina-chip-content {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
   min-width: 0;
+  flex: 1;
 }
 .lumina-chip-name-text {
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 0.95rem;
 }
 .lumina-chip-stats {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: 0 10px;
-  font-size: 0.72rem;
+  grid-template-columns: auto 1fr;
+  gap: 3px 10px;
+  font-size: 0.78rem;
   font-weight: 400;
+  white-space: normal;
 }
 .lumina-chip-stats .stat-key {
   color: #9ca3af;

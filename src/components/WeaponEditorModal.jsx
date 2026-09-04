@@ -27,7 +27,7 @@ export default function WeaponEditorModal({
     <div className="lumina-modal-overlay" onClick={onClose}>
       <div className="lumina-modal" onClick={(e) => e.stopPropagation()}>
         <div className="lumina-modal-header">
-          <h2>{column.characterName || "Character"} — Edit Weapon</h2>
+          <h2>{column.characterName || "Character"} — Select Weapon</h2>
           <button className="lumina-modal-close" onClick={onClose}>
             Close
           </button>

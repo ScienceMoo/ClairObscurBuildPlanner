@@ -9,7 +9,7 @@ export default function PictosEditorModal({ column, onToggle, onClose }) {
     <div className="lumina-modal-overlay" onClick={onClose}>
       <div className="lumina-modal" onClick={(e) => e.stopPropagation()}>
         <div className="lumina-modal-header">
-          <h2>{column.characterName || "Character"} — Edit Pictos</h2>
+          <h2>{column.characterName || "Character"} — Select Pictos</h2>
           <button className="lumina-modal-close" onClick={onClose}>
             Close
           </button>

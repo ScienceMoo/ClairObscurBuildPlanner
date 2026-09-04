@@ -12,7 +12,7 @@ export default function SkillEditorModal({ column, onToggle, onClose }) {
     <div className="lumina-modal-overlay" onClick={onClose}>
       <div className="lumina-modal" onClick={(e) => e.stopPropagation()}>
         <div className="lumina-modal-header">
-          <h2>{column.characterName || "Character"} — Edit Skills</h2>
+          <h2>{column.characterName || "Character"} — Select Skills</h2>
           <button className="lumina-modal-close" onClick={onClose}>
             Close
           </button>

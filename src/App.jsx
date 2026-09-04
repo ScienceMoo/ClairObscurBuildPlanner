@@ -111,7 +111,9 @@ export default function App() {
   function switchAccount(newAccount) {
     setActiveAccount(newAccount);
     setAccount(newAccount);
-    setItems(applyOverrides(getBaseItems(newAccount), loadOverrides(newAccount)));
+    setItems(
+      applyOverrides(getBaseItems(newAccount), loadOverrides(newAccount)),
+    );
   }
 
   function selectWeapon(columnIndex, weaponName) {
