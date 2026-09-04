@@ -1,0 +1,194 @@
+name,description,lumina cost,health,defence,speed,critical rate
+Accelerating Heal,Healing an ally also applies Rush for 1 turn,5,329,,65,
+Accelerating Last Stand,Gain Rush if fighting alone,3,168,,34,
+Accelerating Shots,20% chance to gain Rush on Free Aim shot,3,4869,301,,
+Accelerating Tint,Healing tints also apply Rush,5,2162,,434,
+Aegis Revival,1 Shield after being revived,5,,1990,672,
+Anti-Blight,Immune to Blight,10,1897,949,,
+Anti-Burn,Immune to Burn,15,1602,801,,
+Anti-Charm,Immune to Charm,10,599,240,,
+Anti-Freeze,Immune to Freeze,15,1464,733,,
+Anti-Stun,Immune to Stun,5,2757,1572,,
+At Death’s Door,Deal 50% more damage if Health is below 10%.,5,,1817,,34
+Attack Lifesteal,Recover 15% Health on base attack,15,88,,,4
+Augmented Aim,50% increased Free Aim damage,3,,,21,4
+Augmented Attack,50% increased Base Attack damage,7,,8,10,
+Augmented Counter I,25% increased Counterattack damage,3,95,,,4
+Augmented Counter II,50% increased counterattack damage,5,,208,,15
+Augmented Counter III,75% Increased Counterattack Damage,7,,733,,23
+Augmented First Strike,50% Increased damage on the first hit. Once per battle,5,,,1008,18
+Auto Death,Kill self on battle start,1,,,,26
+Auto Powerful,Apply Powerful for 3 turns on battle start,10,,,241,20
+Auto Regen,Apply Regen for three more turns on battle start,10,,479,,
+Auto Rush,Apply Rush for three turns on battle start,10,,,112,7
+Auto Shell,Apply Shell for 3 turns on battle start,10,411,,,
+Base Shield,1 Shield if not affected by any Shield on turn start,20,,,378,11
+Beneficial Contamination,2 AP on applying a Status Effect. Once per turn,15,,274,135,
+Break Specialist,Break damage is increased by 50% but base damage is reduced by 20%,1,2705,,546,
+Breaker,25% Increased Break Damage,10,,,26,9
+Breaking Attack,Base attack can Break,10,,,154,17
+Breaking Burn,25% increased Break damage on Burning enemies,3,,,243,9
+Breaking Counter,50% Increased Break damage on Counterattack,,,,43,10
+Breaking Death,Fully charge enemy's Break Bar on death,5,,,586,33
+Breaking Shots,50% increased Break damage with Free Aim shots,1,,,43,10
+Breaking Slow,25% increased Break damage against Slowed enemies,5,,,162,17
+Burn Affinity,25% increased damage on Burning targets,10,,,439,12
+Burning Break,Apply 3 burn stacks on Breaking a target,3,1541,,,24
+Burning Death,Apply 3 Burn to all enemies on death,5,,,546,32
+Burning Mark,Apply Burn on hitting a Marked enemy,15,44,32,,
+Burning Shots,20% Chance to burn on Free Aim Shot,3,,,1376,8
+Charging Alteration,10% of a Gradient Charge on applying a buff. Once per turn,10,,1501,546,
+Charging Attack,15% of a Gradient Charge on Base Attack,7,,,266,22
+Charging Burn,20% of a Gradient Charge on applying Burn. Once per turn,10,3152,,639,
+Charging Counter,10% of a Gradient Charge on Counterattack,10,1333,647,,
+Charging Critical,20% Gradient Charge on Critical Hit. Once per turn,10,,1891,,35
+Charging Mark,20% of a Gradient Charge on hitting a Marked target. Once per turn.,10,,,413,27
+Charging Stun,5% of a Gradient Charge on hitting a Stunned enemy,,922,,182,
+Charging Tint,5% of a Gradient Charge on using an item,2,329,122,,
+Charging Weakness,15% Gradient Charge on hitting a Weakness. Once Per turn.,5,,,280,23
+Cheater,Always play twice in a row,40,1198,,400,
+Clea's Life,On turn start if no damage taken since last turn recover 100% health,30,5591,,,
+Cleansing Tint,Healing Tints also remove all Status Effects from the target,5,778,319,,
+Combo Attack I,Base attack has one extra hit,10,,,93,6
+Combo Attack II,Base attack has 1 extra hit,20,,,836,16
+Combo Attack III,Base Attack has 1 extra hit,30,,,619,14
+Confident,Take 50% less damage but can't be healed,20,,,519,31
+Confident Fighter,30% increased damage but can't be healed,15,222,,,20
+Critical Break,25% increased Break damage on Critical Hits.,,,,203,8
+Critical Burn,25% increased Critical Chance on Burning Enemies,5,,,413,27
+Critical Moment,50% increased Critical Chance if Health is below 30%,5,,,26,7
+Critical Stun,100% on Critical Chance on hitting a Stunned target,5,,681,,23
+Critical Vulnerability,25% increased Critical Chance on Defenceless enemies.,5,,116,62,
+Critical Weakness,25% increased Critical Chance on Weakness,5,,,670,14
+Dead Energy I,3 AP on killing an enemy,2,,,162,17
+Dead Energy II,3 AP on killing an enemy.,2,,,162,7
+Death Bomb,On Death deal damage to all enemies,5,,,43,10
+Defensive Mode,On receiving damage consume 1 AP to take 30% less damage if possible,1,216,71,,
+Dodger,Gain 1 AP after Perfect Dodge. Once per turn,1,,,12,3
+Double Burn,On applying a Burn stack apply a second one,30,,,399,11
+Double Mark,Mark requires 1 more hit to be removed,20,,,236,
+Draining Cleanse,Consume 1 AP to prevent Status Effects application if possible,15,2000,324,,
+Effective Heal,Double all Heals received,30,284,341,,
+Effective Support,2 AP on using an item.,5,721,,142,
+Empowering Attack,Gain Powerful for 1 turn on Base Attack,10,,,399,11
+Empowering Break,Gain Powerful on Breaking a target,3,,,546,32
+Empowering Dodge,5% increased damage for each consecutive successful dodge. Can stack up to 10 times,5,,,162,17
+Empowering Last Stand,Gain Powerful if fighting alone,3,168,,,10
+Empowering Parry,Each successful parry increases damage by 5% until end of the following turn. Taking damage removes this buff,5,,,162,17
+Empowering Tint,Healing Tints also apply Powerful,5,2705,,546,
+Energetic Healer,2 Ap when healing an ally,10,,1426,519,
+Energising Attack I,1 AP on base attack,10,,,958,18
+Energising Attack II,1 AP on base attack,15,,120,177,
+Energising Break,3 AP on Breaking a target,3,,,14,7
+Energising Burn,1 AP on applying Burn,10,,401,321,
+Energising Cleanse,Dispel the first negative Status Effect received and gain 2 AP,10,1166,160,,
+Energising Death,On death +4 AP to allies,5,,771,308,
+Energising Gradient,1 AP per Gradient Charge consumed,5,,,293,10
+Energising Heal,On Healing an ally also give 2 AP,10,206,,41,
+Energising Jump,1 AP on Jump Counterattack,5,44,,29,
+Energising Pain,No longer gain Ap on Parry. +1 AP on getting hit,10,3855,713,,
+Energising Parry,1Ap on successful parry,15,6303,,,
+Energising Powerful,Give 2 AP on applying Powerful,10,,373,173,
+Energising Revive,3 AP to all Allies when revived,5,270,96,,
+Energising Rush,Give 2 AP on applying Rush,10,,801,321,
+Energising Shell,Give 2 AP on applying Shell,10,,319,154,
+Energising Shots,20% chance to gain 1 AP on Free Aim shot,10,,,779,16
+Energising Start I,1 AP on battle start,5,320,,,
+Energising Start II,1 AP on battle start,10,175,,,
+Energising Start III,1 AP on battle start,15,320,,,
+Energising Start IV,1 AP on battle start,20,513,,,
+Energising Stun,1 AP on hitting a Stunned target with a Skill.,10,,,519,31
+Energising Turn,1 AP on turn start,20,,,1277,
+Energy Master,Every AP gain is increased by 1,40,4970,,,
+Enfeebling Attack,Base Attack applies powerless for 1 turn,10,389,478,,
+Enfeebling Mark,Marked Targets deal 30% less damage,,,102,21,
+Exhausting Power,50% increased damage if exhausted,,270,96,,
+Exposing Attack,Base Attack applies Defenceless for 1 turn,,,,20,4
+Exposing Break,Apply Defenceless on Break,5,,681,280,
+Faster Than Strong,Always play twice in a row but deal 50% less damage,10,876,373,,
+First Offensive,First hit dealt and taken deals 50% more damage,5,,,75,13
+First Strike,Play first,10,,,41,10
+Fueling Break,Breaking a target doubles its burn amount,5,,,507,31
+Full Strength,25% increased damage on full Health,15,876,373,,
+Glass Canon,Deal 25% more damage but take 25% more damage,10,,,532,
+Gradient Break,50 of a Gradient Charge on Breaking a target.,5,,,434,28
+Gradient Breaker,50% increased Break damage when using Gradient attacks,5,,,546,32
+Gradient Fighter,25% Increased damage with Gradient Attacks,5,,,182,18
+Greater Defenceless,15% to defenceless damage amplification,15,,,293,23
+Greater Powerful,15% to Powerful damage increase,10,,,59,13
+Greater Powerless,15% to Powerless damage reduction,15,,1727,597,
+Greater Rush,25% Rush Speed increase,10,,,439,12
+Greater Shell,10% to Shell damage reduction,10,599,240,,
+Greater Slow,15% to Slow Speed reduction,15,,647,266,
+Healing Boon,Heal 15% HP on applying a buff,10,,647,266,
+Healing Counter,Recover 25% Health on Counterattack,10,751,,,
+Healing Death,On death the rest of the Expedition recovers all Health,5,,,78,13
+Healing Fire,Recover 25% of health when attacking a Burning foe. Once a turn,10,,240,118,
+Healing Mark,Recover 25% Health on hitting a Marked enemy. Once per turn,20,,65,,
+Healing Parry,Recover 3% health on parry,5,395,152,,
+Healing Share,Revive 15% of all Heals affecting other characters,5,467,,,14
+Healing Stun,Recover 5% Health on hitting a Stunned target,10,876,,173,
+Healing Tint Energy,Healing Tints also give 1 AP,1,216,71,,
+Immaculate,30% increased damage until a hit is received,10,,,103,15
+In Media Res,3 Shields on Battle Start but max health is halved,10,,1310,,13
+Inverted Affinity,Apply Inverted on self for three turns at battle start. 50% increased damage while inverted,5,270,,,11
+Last Stand Critical,100% Critical Chance while fighting alone,3,168,50,,
+Longer Burn,Burn duration is increased by 2,15,2570,1426,,
+Longer Powerful,On applying Powerful its duration is increased by 2,10,376,,,13
+Longer Rush,On applying Rush its duration is increased by 2,10,778,,154,
+Longer Shell,On applying Shell its duration is increased by 2,10,2757,1572,,
+Marking Break,Apply Mark on Breaking a target,5,,,434,28
+Marking Shots,20% Chance to apply Mark on Free Aim shot,3,,,26,2
+Painted Power,Damage can exceed 9999,5,1844,,,
+Painter,Convert all Physical damage to Void damage,10,,,519,31
+Perilous Parry,1 AP on Parry but damage received is doubled,5,,,586,33
+Piercing Shot,25% increased Free Aim damage. Free Aim shots ignore Shields,2,546,,,15
+Powered Attack,On every damage dealt try to consume 1 AP. If successful increase damage by 20%,10,,,132,7
+Powerful Heal,Healing an ally also applies Powerful for 1 turn.,5,2162,,434,
+Powerful Mark,Apply Powerful on applying Mark,5,,,779,16
+Powerful on Shell,Apply Powerful on applying Shell,10,,240,,16
+Powerful Revive,Apply Powerful for three turns when Revived,3,,,546,32
+Powerful Shield,10% increased damage per Shield Point on self.,5,,,651,14
+Powerful Shots,20% chance to gain Powerful on Free Aim shot.,3,983,44,,
+Pro Retreat,Allows Flee to be instantanous,40,2014,,406,
+Protecting Attack,Gain Shell for 1 turn on Base Attack.,10,3081,524,,
+Protecting Death,On Death allies gain Shell,3,599,,118,
+Protecting Heal,Healing an ally also applies Shell for a turn,5,395,,78,
+Protecting Last Stand,Gain Shell if fighting alone,3,168,50,,
+Protecting Shots,20% chance to gain Shell on Free Aim shot.,3,4869,301,,
+Protecting Tint,Healing Tints also apply Shell,5,1403,681,,
+Quick Break,Play again after Breaking a target,3,,,672,36
+Random Defense,Damage taken is randomly multiplied by a value between 50% and 200%,5,,,,34
+Recovery,Recovers 10% Health on turn start,10,2000,324,,
+Rejuvenating Revive,Apply Regen for 3 turns when revived.,,546,218,,
+Revive Paradox,Play immediately when revived,5,,,92,14
+Revive Tint Energy,Revive Tints also give 3 AP,10,257,92,,
+Rewarding Mark,2 AP on dealing damage to a Marked target. Once per turn,5,,20,7,
+Roulette,Every hit has a 50% chance to deal either 50% or 200% of its damage,5,,34,,9
+Rush on Powerful,Apply Rush on applying Powerful,10,,,639,35
+Second Chance,Revive with 100% Health. Once per battle,40,1107,,,8
+Shared Care,When healing an ally also Heal self for 50% of that value,10,206,68,,
+Shell On Rush,Apply Shell on applying Rush.,10,,1048,413,
+Shield Affinity,30% increased damage while having Shields but receiving any damage always removes all shields,15,,,266,22
+Shielding Death,On death allies gain 3 Shield points,10,,801,161,
+Shielding Tint,Healing Tints also add 2 Shields.,10,313,116,,
+Shortcut,Immediately play when falling below 30% health. Once per battle,5,,,672,36
+Slowing Break,Apply Slow on Break,,,1501,546,
+Sniper,First Free Aim shot each turn deals 200% increased damage and can Break,15,,,552,13
+Solidifying,2 Shields when the character's Health falls below 50%. Once per battle,10,,116,62,
+Solo Fighter,Deal 50% more damage if fighting alone,1,168,50,,
+SOS Power,Apply Powerful when falling below 50% health,5,,,43,10
+SOS Rush,Apply Rush when falling below 50% Health,5,,288,142,
+SOS Shell,Apply Shell when falling below 50% Health,5,,13,14,
+Staggering Attack,50% Increased Break Damage on Base Attack,1,,,21,4
+Stay Marked,50% chance to apply Mark when attacking a Marked enemy,10,,,201,12
+Stun Boost,30% increased damage on Stunned targets,10,,,35,2
+Survivor,Survive fatal damage with 1 Health. Once per battle,20,,,439,12
+Sweet Kill,Recover 50% health on killing an enemy,5,,,54,11
+Tainted,15% Increased damage for each Status Effect on self,3,,1022,,12
+Teamwork,10% increased damage while all allies are alive,5,216,,71,
+The One,Max Health is reduced to 1,1,,,,106
+Time Tint,Energy Tints also apply Rush,10,376,145,,
+Versatile,After a Free Aim hit base attack damage is increased by 50% for 1 turn,5,,,21,4
+Warming Up,5% increased damage per turn. Can stack up to 5 times,15,1166,,,9
+Weakness Gain,1 AP on hitting an enemy's weakness once per turn,3,,,162,17
