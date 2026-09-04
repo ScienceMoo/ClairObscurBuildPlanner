@@ -56,11 +56,26 @@ body {
   color: #fff5eb;
   border-color: #f6821f;
 }
+@media (max-width: 640px) {
+  .app header {
+    flex-wrap: wrap;
+  }
+  .header-actions {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .backup-actions {
+    border-right: none;
+    padding-right: 0;
+  }
+}
 .build-display {
-  overflow: auto;
+  overflow-x: auto;
 }
 .build-table {
   width: 100%;
+  min-width: 700px;
   border-collapse: collapse;
   table-layout: fixed;
 }
@@ -121,8 +136,7 @@ body {
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
-  padding-top: 10px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 4px;
   width: 100%;
 }
 .item-description {
