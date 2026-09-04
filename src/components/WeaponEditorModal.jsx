@@ -2,6 +2,15 @@ import React from "react";
 import weaponsCatalog from "../data/weaponsCatalog";
 import SelectableChipGrid from "./SelectableChipGrid";
 
+const WEAPON_STATS_FIELDS = [
+  { key: "power", label: "Power" },
+  { key: "element", label: "Element" },
+  { key: "vitality", label: "Vitality" },
+  { key: "defense", label: "Defense" },
+  { key: "agility", label: "Agility" },
+  { key: "luck", label: "Luck" },
+];
+
 export default function WeaponEditorModal({ column, onSelect, onClose }) {
   const characterWeapons = weaponsCatalog
     .filter((weapon) => weapon.character === column.characterName)
@@ -30,6 +39,8 @@ export default function WeaponEditorModal({ column, onSelect, onClose }) {
             onClose();
           }}
           emptyMessage="No weapons data yet for this character."
+          showImages
+          statsFields={WEAPON_STATS_FIELDS}
         />
       </div>
     </div>

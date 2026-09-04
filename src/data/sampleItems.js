@@ -1,42 +1,40 @@
-const placeholder = "/placeholder.svg";
-
 const sampleItems = {
   columns: [
     {
       characterName: "Gustave",
-      weapon: "Lanceram",
+      weapon: "Noahram",
+      weaponLevel: 1,
       pictos: [],
       luminas: [],
       attributes: "STR +5",
       skills: [],
-      placeholder,
     },
     {
       characterName: "Lune",
-      weapon: "",
+      weapon: "Lunerim",
+      weaponLevel: 1,
       pictos: [],
       luminas: [],
       attributes: "DEX +4",
       skills: [],
-      placeholder,
     },
     {
       characterName: "Maelle",
-      weapon: "",
+      weapon: "Maellum",
+      weaponLevel: 1,
       pictos: [],
       luminas: [],
       attributes: "VIT +3",
       skills: [],
-      placeholder,
     },
     {
       characterName: "Sciel",
-      weapon: "",
+      weapon: "Scieleson",
+      weaponLevel: 1,
       pictos: [],
       luminas: [],
       attributes: "AGI +6",
       skills: [],
-      placeholder,
     },
   ],
 };

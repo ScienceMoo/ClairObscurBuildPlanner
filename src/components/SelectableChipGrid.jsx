@@ -8,6 +8,8 @@ export default function SelectableChipGrid({
   equippedNames,
   onToggle,
   emptyMessage,
+  showImages = false,
+  statsFields = [],
 }) {
   const [query, setQuery] = useState("");
   const [highlightedIndex, setHighlightedIndex] = useState(0);
@@ -67,12 +69,32 @@ export default function SelectableChipGrid({
                 ref={(el) => (chipRefs.current[idx] = el)}
                 className={`lumina-chip${equipped ? " selected" : ""}${
                   highlighted ? " highlighted" : ""
-                }`}
+                }${showImages || statsFields.length ? " with-image" : ""}`}
                 onClick={() => onToggle(item.name)}
                 onMouseEnter={() => setHighlightedIndex(idx)}
                 title={item.description}
               >
-                {item.name}
+                {showImages && item.image && (
+                  <img src={item.image} alt="" className="lumina-chip-image" />
+                )}
+                {statsFields.length > 0 ? (
+                  <div className="lumina-chip-content">
+                    <span className="lumina-chip-name-text">{item.name}</span>
+                    <ul className="lumina-chip-stats">
+                      {statsFields.map(
+                        ({ key, label }) =>
+                          item[key] != null && (
+                            <li key={key}>
+                              <span className="stat-key">{label}</span>
+                              <span className="stat-value">{item[key]}</span>
+                            </li>
+                          ),
+                      )}
+                    </ul>
+                  </div>
+                ) : (
+                  item.name
+                )}
               </button>
             );
           })}

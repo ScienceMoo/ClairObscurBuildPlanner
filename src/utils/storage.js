@@ -76,10 +76,45 @@ export function applyOverrides(defaultItems, overrides) {
     return {
       ...col,
       ...(override.weapon !== undefined ? { weapon: override.weapon } : {}),
+      ...(override.weaponLevel !== undefined
+        ? { weaponLevel: override.weaponLevel }
+        : {}),
       ...(override.luminas !== undefined ? { luminas: override.luminas } : {}),
       ...(override.pictos !== undefined ? { pictos: override.pictos } : {}),
       ...(override.skills !== undefined ? { skills: override.skills } : {}),
     };
   });
   return { ...defaultItems, columns };
+}
+
+const ACCOUNT_IDS = ["account1", "account2"];
+
+// Bundles everything saved in localStorage (both accounts' overrides plus
+// which account is active) into one plain object suitable for JSON export.
+export function exportBackup() {
+  const accounts = {};
+  ACCOUNT_IDS.forEach((id) => {
+    accounts[id] = loadOverrides(id);
+  });
+  return {
+    exportedAt: new Date().toISOString(),
+    activeAccount: getActiveAccount(),
+    accounts,
+  };
+}
+
+// Restores a previously exported backup, overwriting existing localStorage
+// data for any account present in the backup.
+export function importBackup(data) {
+  if (!data || typeof data !== "object" || !data.accounts) {
+    throw new Error("That doesn't look like a valid build backup file.");
+  }
+  ACCOUNT_IDS.forEach((id) => {
+    if (data.accounts[id]) {
+      saveOverrides(id, data.accounts[id]);
+    }
+  });
+  if (data.activeAccount && ACCOUNT_IDS.includes(data.activeAccount)) {
+    setActiveAccount(data.activeAccount);
+  }
 }

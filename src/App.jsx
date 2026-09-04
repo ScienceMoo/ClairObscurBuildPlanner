@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import BuildDisplay from "./components/BuildDisplay";
 import WeaponEditorModal from "./components/WeaponEditorModal";
 import PictosEditorModal from "./components/PictosEditorModal";
@@ -8,7 +8,9 @@ import sampleItems from "./data/sampleItems";
 import {
   applyOverrides,
   characterKey,
+  exportBackup,
   getActiveAccount,
+  importBackup,
   loadOverrides,
   saveOverrides,
   setActiveAccount,
@@ -28,6 +30,7 @@ export default function App() {
   const [editingPictosIndex, setEditingPictosIndex] = useState(null);
   const [editingLuminasIndex, setEditingLuminasIndex] = useState(null);
   const [editingSkillsIndex, setEditingSkillsIndex] = useState(null);
+  const importInputRef = useRef(null);
 
   // Persist only the user-editable fields (weapon/luminas/pictos/skills) per
   // character, under the currently active account, so future code updates
@@ -38,6 +41,7 @@ export default function App() {
     items.columns.forEach((col, idx) => {
       overrides[characterKey(col, idx)] = {
         weapon: col.weapon,
+        weaponLevel: col.weaponLevel,
         luminas: col.luminas,
         pictos: col.pictos,
         skills: col.skills,
@@ -45,6 +49,43 @@ export default function App() {
     });
     saveOverrides(account, overrides);
   }, [items, account]);
+
+  function handleExport() {
+    const backup = exportBackup();
+    const blob = new Blob([JSON.stringify(backup, null, 2)], {
+      type: "application/json",
+    });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `clair-obscur-build-${new Date().toISOString().slice(0, 10)}.json`;
+    link.click();
+    URL.revokeObjectURL(url);
+  }
+
+  function handleImportClick() {
+    importInputRef.current?.click();
+  }
+
+  function handleImportFile(event) {
+    const file = event.target.files?.[0];
+    event.target.value = "";
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const data = JSON.parse(reader.result);
+        importBackup(data);
+        setAccount(getActiveAccount());
+        setItems(
+          applyOverrides(sampleItems, loadOverrides(getActiveAccount())),
+        );
+      } catch (err) {
+        alert(`Couldn't import that file: ${err.message}`);
+      }
+    };
+    reader.readAsText(file);
+  }
 
   function switchAccount(newAccount) {
     setActiveAccount(newAccount);
@@ -56,6 +97,15 @@ export default function App() {
     setItems((prev) => {
       const columns = prev.columns.map((col, idx) =>
         idx === columnIndex ? { ...col, weapon: weaponName } : col,
+      );
+      return { ...prev, columns };
+    });
+  }
+
+  function setWeaponLevel(columnIndex, level) {
+    setItems((prev) => {
+      const columns = prev.columns.map((col, idx) =>
+        idx === columnIndex ? { ...col, weaponLevel: level } : col,
       );
       return { ...prev, columns };
     });
@@ -104,23 +154,43 @@ export default function App() {
   return (
     <div className="app">
       <header>
-        <h1>Clair Obscur Builder</h1>
-        <div className="account-toggle">
-          {ACCOUNTS.map((acc) => (
-            <button
-              key={acc.id}
-              className={`account-button${account === acc.id ? " active" : ""}`}
-              onClick={() => switchAccount(acc.id)}
-            >
-              {acc.label}
+        <h1>Clair Obscur Build Planner</h1>
+        <div className="header-actions">
+          <div className="backup-actions">
+            <button className="account-button" onClick={handleExport}>
+              Export
             </button>
-          ))}
+            <button className="account-button" onClick={handleImportClick}>
+              Import
+            </button>
+            <input
+              type="file"
+              accept="application/json"
+              ref={importInputRef}
+              onChange={handleImportFile}
+              style={{ display: "none" }}
+            />
+          </div>
+          <div className="account-toggle">
+            {ACCOUNTS.map((acc) => (
+              <button
+                key={acc.id}
+                className={`account-button${account === acc.id ? " active" : ""}`}
+                onClick={() => switchAccount(acc.id)}
+              >
+                {acc.label}
+              </button>
+            ))}
+          </div>
         </div>
       </header>
       <main>
         <BuildDisplay
           items={items}
           onEditWeapon={(columnIndex) => setEditingWeaponIndex(columnIndex)}
+          onWeaponLevelChange={(columnIndex, level) =>
+            setWeaponLevel(columnIndex, level)
+          }
           onEditPictos={(columnIndex) => setEditingPictosIndex(columnIndex)}
           onEditLuminas={(columnIndex) => setEditingLuminasIndex(columnIndex)}
           onEditSkills={(columnIndex) => setEditingSkillsIndex(columnIndex)}

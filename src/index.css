@@ -23,6 +23,17 @@ body {
 .app header h1 {
   margin: 0;
 }
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.backup-actions {
+  display: flex;
+  gap: 8px;
+  padding-right: 16px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
 .account-toggle {
   display: flex;
   gap: 8px;
@@ -51,11 +62,13 @@ body {
 .build-table {
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
 }
 .build-table td {
   border: 1px solid rgba(255, 255, 255, 0.06);
   padding: 8px;
   vertical-align: top;
+  overflow-wrap: break-word;
 }
 .build-cell {
   min-height: 120px;
@@ -116,6 +129,61 @@ body {
 }
 .stat-value {
   font-weight: 600;
+}
+.item-passives {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 0;
+  width: 100%;
+  font-size: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.item-passives li {
+  display: flex;
+  gap: 6px;
+  padding: 3px 6px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.04);
+}
+.item-passives li.unlocked {
+  background: rgba(246, 130, 31, 0.15);
+}
+.item-passives li.locked {
+  opacity: 0.5;
+}
+.passive-level {
+  font-weight: 700;
+  color: #f6821f;
+  flex-shrink: 0;
+}
+.item-passives li.locked .passive-level {
+  color: #9ca3af;
+}
+.item-no-passives {
+  margin-top: 6px;
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-style: italic;
+}
+.weapon-level-input {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+  margin: 8px 0 0;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+.weapon-level-input input {
+  width: 50px;
+  padding: 3px 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  color: #e6eef8;
+  font-size: 0.8rem;
 }
 .compact-list {
   list-style: none;
@@ -238,6 +306,43 @@ body {
 .lumina-chip.highlighted {
   outline: 2px solid #f6821f;
   outline-offset: 1px;
+}
+.lumina-chip.with-image {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.lumina-chip-image {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.lumina-chip-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.lumina-chip-name-text {
+  font-weight: 600;
+}
+.lumina-chip-stats {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 0 10px;
+  font-size: 0.72rem;
+  font-weight: 400;
+}
+.lumina-chip-stats .stat-key {
+  color: #9ca3af;
+  margin-right: 4px;
+}
+.lumina-chip-stats .stat-value {
+  font-weight: 600;
 }
 .selectable-grid {
   display: flex;
