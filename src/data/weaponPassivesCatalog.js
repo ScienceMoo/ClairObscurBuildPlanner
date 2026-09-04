@@ -35,6 +35,27 @@ const weaponPassivesCatalog = [
       { level: 20, effect: "Parrying gives 2 Perfection instead of 1." },
     ],
   },
+  {
+    character: "Maelle",
+    name: "Medalum",
+    passives: [
+      { level: 4, effect: "Start in Virtuose Stance." },
+      {
+        level: 10,
+        effect: "In Virtuose Stance, every Burn applied is doubled.",
+      },
+      { level: 20, effect: "In Virtuose Stance, Burn deals double damage." },
+    ],
+  },
+  {
+    character: "Lune",
+    name: "Trebuchim",
+    passives: [
+      { level: 4, effect: "Generate a random Stain on Free Aim shot." },
+      { level: 10, effect: "+1 AP when Stains are consumed." },
+      { level: 20, effect: "Base Attack generates 2 random Stains." },
+    ],
+  },
 ];
 
 export default weaponPassivesCatalog;

@@ -188,9 +188,6 @@ export default function App() {
         <BuildDisplay
           items={items}
           onEditWeapon={(columnIndex) => setEditingWeaponIndex(columnIndex)}
-          onWeaponLevelChange={(columnIndex, level) =>
-            setWeaponLevel(columnIndex, level)
-          }
           onEditPictos={(columnIndex) => setEditingPictosIndex(columnIndex)}
           onEditLuminas={(columnIndex) => setEditingLuminasIndex(columnIndex)}
           onEditSkills={(columnIndex) => setEditingSkillsIndex(columnIndex)}
@@ -202,6 +199,7 @@ export default function App() {
           onSelect={(weaponName) =>
             selectWeapon(editingWeaponIndex, weaponName)
           }
+          onLevelChange={(level) => setWeaponLevel(editingWeaponIndex, level)}
           onClose={() => setEditingWeaponIndex(null)}
         />
       )}

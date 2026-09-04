@@ -1,9 +1,10 @@
 import React from "react";
 
 function SingleItem({ title, showImage }) {
-  // title can be a plain string, or an object: { name, image, description, stats, passives }
+  // title can be a plain string, or an object: { name, image, level, description, stats, passives }
   const isObject = title && typeof title === "object";
   const name = isObject ? title.name : title;
+  const level = isObject ? title.level : null;
   const description = isObject ? title.description : null;
   const image = isObject ? title.image : null;
   const stats = isObject ? title.stats : null;
@@ -14,7 +15,10 @@ function SingleItem({ title, showImage }) {
       {showImage && image && (
         <img src={image} alt={name || ""} className="item-img" />
       )}
-      <div className="item-title">{name || "-"}</div>
+      <div className="item-title">
+        {name || "-"}
+        {level ? <span className="item-level"> Lv.{level}</span> : null}
+      </div>
       {description && <div className="item-description">{description}</div>}
       {stats && (
         <ul className="item-stats">

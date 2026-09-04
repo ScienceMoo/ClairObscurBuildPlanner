@@ -11,7 +11,12 @@ const WEAPON_STATS_FIELDS = [
   { key: "luck", label: "Luck" },
 ];
 
-export default function WeaponEditorModal({ column, onSelect, onClose }) {
+export default function WeaponEditorModal({
+  column,
+  onSelect,
+  onLevelChange,
+  onClose,
+}) {
   const characterWeapons = weaponsCatalog
     .filter((weapon) => weapon.character === column.characterName)
     .sort((a, b) => a.name.localeCompare(b.name));
@@ -27,6 +32,15 @@ export default function WeaponEditorModal({ column, onSelect, onClose }) {
             Close
           </button>
         </div>
+        <label className="weapon-level-input">
+          Power Level
+          <input
+            type="number"
+            min="1"
+            value={column.weaponLevel || 1}
+            onChange={(e) => onLevelChange(Number(e.target.value) || 1)}
+          />
+        </label>
         <p className="lumina-modal-hint">
           Type to search, press ↓ then Enter to equip, or click a Weapon
           directly. Selecting a weapon replaces the current one.

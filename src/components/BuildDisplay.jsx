@@ -11,7 +11,6 @@ const ROW_LABELS = ["Character Name", "Weapon", "Skills", "Pictos", "Luminas"];
 export default function BuildDisplay({
   items,
   onEditWeapon,
-  onWeaponLevelChange,
   onEditPictos,
   onEditLuminas,
   onEditSkills,
@@ -44,7 +43,7 @@ export default function BuildDisplay({
         }))
       : null;
 
-    return { name: entry.name, image: entry.image, stats, passives };
+    return { name: entry.name, image: entry.image, level, stats, passives };
   }
 
   function resolvePictos(equippedNames) {
@@ -95,25 +94,36 @@ export default function BuildDisplay({
                 <td key={colIndex} className="build-cell">
                   {rowIndex === 0 ? (
                     <div className="char-name">{col.characterName || "-"}</div>
+                  ) : rowLabel === "Weapon" ? (
+                    <div className="weapon-card">
+                      <ItemCell
+                        title={resolveWeapon(
+                          col.characterName,
+                          col.weapon,
+                          col.weaponLevel,
+                        )}
+                        showImage
+                      />
+                      <div className="weapon-card-controls">
+                        <button
+                          className="edit-luminas-button"
+                          onClick={() => onEditWeapon(colIndex)}
+                        >
+                          Select Weapon
+                        </button>
+                      </div>
+                    </div>
                   ) : (
                     <>
                       <ItemCell
                         title={
-                          rowLabel === "Weapon"
-                            ? resolveWeapon(
-                                col.characterName,
-                                col.weapon,
-                                col.weaponLevel,
-                              )
-                            : rowLabel === "Pictos"
-                              ? resolvePictos(col.pictos)
-                              : rowLabel === "Luminas"
-                                ? resolveLuminas(col.luminas)
-                                : rowLabel === "Skills"
-                                  ? resolveSkills(col.characterName, col.skills)
-                                  : col[
-                                      rowLabel.toLowerCase().replace(/ /g, "")
-                                    ]
+                          rowLabel === "Pictos"
+                            ? resolvePictos(col.pictos)
+                            : rowLabel === "Luminas"
+                              ? resolveLuminas(col.luminas)
+                              : rowLabel === "Skills"
+                                ? resolveSkills(col.characterName, col.skills)
+                                : col[rowLabel.toLowerCase().replace(/ /g, "")]
                         }
                         showImage={
                           rowLabel !== "Pictos" &&
@@ -124,30 +134,6 @@ export default function BuildDisplay({
                           rowLabel === "Luminas" || rowLabel === "Skills"
                         }
                       />
-                      {rowLabel === "Weapon" && (
-                        <>
-                          <label className="weapon-level-input">
-                            Power Level
-                            <input
-                              type="number"
-                              min="1"
-                              value={col.weaponLevel || 1}
-                              onChange={(e) =>
-                                onWeaponLevelChange(
-                                  colIndex,
-                                  Number(e.target.value) || 1,
-                                )
-                              }
-                            />
-                          </label>
-                          <button
-                            className="edit-luminas-button"
-                            onClick={() => onEditWeapon(colIndex)}
-                          >
-                            Edit Weapon
-                          </button>
-                        </>
-                      )}
                       {rowLabel === "Pictos" && (
                         <button
                           className="edit-luminas-button"

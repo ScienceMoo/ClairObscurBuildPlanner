@@ -2,8 +2,8 @@ const sampleItems = {
   columns: [
     {
       characterName: "Gustave",
-      weapon: "Noahram",
-      weaponLevel: 1,
+      weapon: "Lanceram",
+      weaponLevel: 4,
       pictos: [],
       luminas: [],
       attributes: "STR +5",
@@ -11,8 +11,8 @@ const sampleItems = {
     },
     {
       characterName: "Lune",
-      weapon: "Lunerim",
-      weaponLevel: 1,
+      weapon: "Trebuchim",
+      weaponLevel: 4,
       pictos: [],
       luminas: [],
       attributes: "DEX +4",
@@ -20,8 +20,8 @@ const sampleItems = {
     },
     {
       characterName: "Maelle",
-      weapon: "Maellum",
-      weaponLevel: 1,
+      weapon: "Medalum",
+      weaponLevel: 6,
       pictos: [],
       luminas: [],
       attributes: "VIT +3",

@@ -87,6 +87,44 @@ body {
 .item-title {
   font-size: 0.9rem;
 }
+.item-level {
+  color: #9ca3af;
+  font-weight: 400;
+}
+.weapon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.weapon-card .item-cell {
+  gap: 8px;
+}
+.weapon-card .item-img {
+  width: 88px;
+  height: 88px;
+  padding: 10px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+}
+.weapon-card .item-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+.weapon-card .item-stats {
+  margin-top: 2px;
+}
+.weapon-card-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  width: 100%;
+}
 .item-description {
   font-size: 0.78rem;
   color: #c7d2e0;
@@ -116,19 +154,22 @@ body {
   margin: 0;
   padding: 0;
   font-size: 0.8rem;
-  width: 100%;
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  column-gap: 14px;
+  row-gap: 3px;
+  justify-content: center;
 }
 .item-stats li {
-  display: flex;
-  justify-content: space-between;
-  gap: 6px;
-  padding: 2px 4px;
+  display: contents;
 }
 .stat-key {
   color: #9ca3af;
+  text-align: right;
 }
 .stat-value {
   font-weight: 600;
+  text-align: left;
 }
 .item-passives {
   list-style: none;
@@ -171,14 +212,12 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
-  justify-content: center;
-  margin: 8px 0 0;
   font-size: 0.75rem;
   color: #9ca3af;
 }
 .weapon-level-input input {
   width: 50px;
-  padding: 3px 6px;
+  padding: 5px 6px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 6px;
@@ -231,6 +270,12 @@ body {
 }
 .edit-luminas-button:hover {
   background: rgba(246, 130, 31, 0.28);
+}
+.weapon-card-controls .edit-luminas-button {
+  margin: 0;
+}
+.item-no-passives {
+  text-align: center;
 }
 .lumina-modal-overlay {
   position: fixed;
