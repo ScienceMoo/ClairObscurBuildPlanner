@@ -4,10 +4,10 @@ const sampleItems = {
       characterName: "Gustave",
       weapon: "Lanceram",
       weaponLevel: 4,
-      pictos: [],
-      luminas: [],
+      pictos: ["Augmented Attack"],
+      luminas: ["Augmented Attack", "Dodger", "Last Stand Critical"],
       attributes: "STR +5",
-      skills: [],
+      skills: ["Lumière Assault", "Overcharge"],
     },
     {
       characterName: "Lune",
