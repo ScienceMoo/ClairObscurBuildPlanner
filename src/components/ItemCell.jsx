@@ -16,7 +16,7 @@ function SingleItem({ title, showImage }) {
         <img src={image} alt={name || ""} className="item-img" />
       )}
       <div className="item-title">
-        {name || "-"}
+        {name}
         {level ? <span className="item-level"> Lv.{level}</span> : null}
       </div>
       {description && <div className="item-description">{description}</div>}
