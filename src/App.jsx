@@ -21,10 +21,28 @@ const ACCOUNTS = [
   { id: "account2", label: "Account 2" },
 ];
 
+// Only "account1" starts with the hardcoded starter build in sampleItems.js.
+// Every other account starts completely blank (even the weapon) until the
+// user picks their own, regardless of what sampleItems.js has set.
+function getBaseItems(account) {
+  if (account === "account1") return sampleItems;
+  return {
+    ...sampleItems,
+    columns: sampleItems.columns.map((col) => ({
+      ...col,
+      weapon: "",
+      weaponLevel: 1,
+      pictos: [],
+      luminas: [],
+      skills: [],
+    })),
+  };
+}
+
 export default function App() {
   const [account, setAccount] = useState(() => getActiveAccount());
   const [items, setItems] = useState(() =>
-    applyOverrides(sampleItems, loadOverrides(account)),
+    applyOverrides(getBaseItems(account), loadOverrides(account)),
   );
   const [editingWeaponIndex, setEditingWeaponIndex] = useState(null);
   const [editingPictosIndex, setEditingPictosIndex] = useState(null);
@@ -78,7 +96,10 @@ export default function App() {
         importBackup(data);
         setAccount(getActiveAccount());
         setItems(
-          applyOverrides(sampleItems, loadOverrides(getActiveAccount())),
+          applyOverrides(
+            getBaseItems(getActiveAccount()),
+            loadOverrides(getActiveAccount()),
+          ),
         );
       } catch (err) {
         alert(`Couldn't import that file: ${err.message}`);
@@ -90,7 +111,7 @@ export default function App() {
   function switchAccount(newAccount) {
     setActiveAccount(newAccount);
     setAccount(newAccount);
-    setItems(applyOverrides(sampleItems, loadOverrides(newAccount)));
+    setItems(applyOverrides(getBaseItems(newAccount), loadOverrides(newAccount)));
   }
 
   function selectWeapon(columnIndex, weaponName) {
